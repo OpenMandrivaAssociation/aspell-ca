@@ -1,7 +1,7 @@
 %define _enable_debug_packages %{nil}
 %define debug_package          %{nil}
 
-%define src_ver 20040130-1
+%define src_ver 2.1.5-1
 %define fname aspell6-%{languagecode}
 %define aspell_ver 0.60
 %define languageenglazy Catalan
@@ -11,12 +11,12 @@
 Summary:       %{languageenglazy} files for aspell
 Summary(ca):   Diccionari català per aspell
 Name:          aspell-%{languagecode}
-Version:       20040130.1
-Release:       %mkrel 8
+Version:       2.1.5
+Release:       %mkrel 1
 Group:         System/Internationalization
 Source:        http://ftp.gnu.org/gnu/aspell/dict/%{languagecode}/%{fname}-%{src_ver}.tar.bz2
 URL:           http://aspell.net/
-License:	   GPL
+License:	GPLv2
 BuildRoot:     %{_tmppath}/%{name}-%{version}-root
 Provides: spell-ca
 
@@ -48,6 +48,10 @@ comercials de text, com el Lyx, etc."
 
 %prep
 %setup -q -n %{fname}-%{src_ver}
+iconv -f ISO-8859-15 -t utf-8 doc/ChangeLog -o doc/ChangeLog.aux
+iconv -f ISO-8859-15 -t utf-8 Copyright -o Copyright.aux
+mv -f doc/ChangeLog.aux doc/ChangeLog
+mv -f Copyright.aux Copyright
 
 %build
 
