@@ -61,7 +61,7 @@ mv -f Copyright.aux Copyright
 %make
 
 %install
-rm -fr $RPM_BUILD_ROOT
+rm -fr %{buildroot}
 
 %makeinstall_std
 
@@ -69,7 +69,7 @@ mv -f README README.%{languagecode}
 chmod 644 Copyright README.%{languagecode} doc/*
 
 %clean
-rm -fr $RPM_BUILD_ROOT
+rm -fr %{buildroot}
 
 %files
 %defattr(-,root,root)
