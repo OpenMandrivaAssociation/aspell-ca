@@ -12,7 +12,7 @@ Summary:	%{languageenglazy} files for aspell
 Summary(ca):	Diccionari català per aspell
 Name:		aspell-%{languagecode}
 Version:	20090721
-Release:	13
+Release:	14
 Group:		System/Internationalization
 License:	GPLv2
 Url:		http://aspell.net/
