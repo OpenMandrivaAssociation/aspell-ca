@@ -13,12 +13,13 @@ Summary(ca):	Diccionari català per aspell
 Name:		aspell-%{languagecode}
 Epoch:		1
 Version:	2.1.5.1
-Release:	1
+Release:	2
 Group:		System/Internationalization
 License:	GPLv2
 Url:		https://aspell.net/
 Source0:	http://ftp.gnu.org/gnu/aspell/dict/%{languagecode}/%{fname}-%{src_ver}.tar.bz2
 
+BuildRequires:	locales-extra-charsets
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool-base
